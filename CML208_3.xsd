@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!--Created with Liquid Studio 2021 (https://www.liquid-technologies.com)-->
 <xs:schema xmlns:tns="urn:1C.ru:commerceml_5" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:1C.ru:commerceml_5" xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <xs:element name="Документ" type="tns:Документ" />
@@ -6,6 +6,7 @@
     <xs:element name="Каталог" type="tns:Каталог" />
     <xs:element name="Классификатор" type="tns:Классификатор" />
     <xs:element name="Контрагенты" type="tns:Контрагенты" />
+    <xs:element name="РасчетныеСчета" type="tns:РасчетныеСчета"/>
     <xs:element name="ПакетПредложений" type="tns:ПакетПредложений" />
     <xs:element name="КоммерческаяИнформация">
         <xs:complexType>
@@ -408,6 +409,11 @@
         </xs:sequence>
         <xs:attribute name="СодержитТолькоИзменения" type="tns:ПереключательТип" />
     </xs:complexType>
+    <xs:complexType name="РасчетныеСчета">
+        <xs:sequence>
+            <xs:element name="РасчетныйСчет" type="tns:РасчетныйСчет" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
     <xs:complexType name="Каталог">
         <xs:sequence>
             <xs:element name="Ид" type="tns:ИдентификаторГлобальныйТип" />
@@ -540,13 +546,7 @@
             <xs:element name="ОКПО" type="tns:ОКПОТип" minOccurs="0" />
             <xs:element name="ДатаРегистрации" type="tns:ДатаТип" minOccurs="0" />
             <xs:element name="Руководитель" type="tns:Руководитель" minOccurs="0" />
-            <xs:element name="РасчетныеСчета" minOccurs="0">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="РасчетныйСчет" type="tns:РасчетныйСчет" maxOccurs="unbounded" />
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
+            <xs:element name="РасчетныеСчета" type="tns:РасчетныеСчета"/>
             <xs:element name="ПолноеНаименование" type="tns:НаименованиеТип" minOccurs="0" />
             <xs:element name="Обращение" type="tns:ОбращениеТип" minOccurs="0" />
             <xs:element name="Фамилия" type="tns:СтрокаТип" minOccurs="0" />
