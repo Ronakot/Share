@@ -517,7 +517,7 @@
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="Контрагент">
-        <xs:sequence>
+        <xs:choice>
             <xs:element name="Ид" type="tns:ИдентификаторГлобальныйТип" minOccurs="0" />
             <xs:element name="Наименование" type="tns:НаименованиеТип" minOccurs="0" />
             <xs:element name="ОфициальноеНаименование" type="tns:НаименованиеТип" minOccurs="0" />
@@ -584,7 +584,7 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-        </xs:sequence>
+        </xs:choice>
         <xs:attribute name="СодержитТолькоИзменения" type="tns:ПереключательТип" />
     </xs:complexType>
     <xs:simpleType name="КоэффициентТип">
@@ -843,7 +843,7 @@
         </xs:choice>
     </xs:complexType>
     <xs:complexType name="РасчетныйСчет">
-        <xs:sequence>
+        <xs:choice>
             <xs:element name="НомерСчета" type="tns:СчетНомерТип" />
             <xs:element name="СчетКорреспондентский" type="tns:СчетНомерТип" minOccurs="0" />
             <xs:element name="Наименование" type="tns:НаименованиеТип" minOccurs="0" />
@@ -859,7 +859,7 @@
             <xs:element name="SWIFT" type="xs:string" minOccurs="0" />
             <xs:element name="БанкКорреспондент" type="tns:Банк" minOccurs="0" />
             <xs:element name="Комментарий" type="tns:КомментарийТип" minOccurs="0" />
-        </xs:sequence>
+        </xs:choice>
     </xs:complexType>
     <xs:simpleType name="РольТип">
         <xs:restriction base="xs:string">
