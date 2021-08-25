@@ -570,13 +570,6 @@
                         <xs:element name="ОКПО" type="tns:ОКПОТип" minOccurs="0" />
                         <xs:element name="ДатаРегистрации" type="tns:ДатаТип" minOccurs="0" />
                         <xs:element name="Руководитель" type="tns:Руководитель" minOccurs="0" />
-                        <xs:element name="РасчетныеСчета" minOccurs="0">
-                            <xs:complexType>
-                                <xs:sequence>
-                                    <xs:element name="РасчетныйСчет" type="tns:РасчетныйСчет" maxOccurs="unbounded" />
-                                </xs:sequence>
-                            </xs:complexType>
-                        </xs:element>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
