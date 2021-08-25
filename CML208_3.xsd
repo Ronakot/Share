@@ -533,7 +533,7 @@
             <xs:element name="ОКПО" type="tns:ОКПОТип" minOccurs="0" />
             <xs:element name="ДатаРегистрации" type="tns:ДатаТип" minOccurs="0" />
             <xs:element name="Руководитель" type="tns:Руководитель" minOccurs="0" />
-            <xs:element name="РасчетныеСчета" type="tns:РасчетныеСчета" />
+            <xs:element name="РасчетныеСчета" type="tns:РасчетныеСчета" maxOccurs="unbounded"/>
             <xs:element name="ПолноеНаименование" type="tns:НаименованиеТип" minOccurs="0" />
             <xs:element name="Обращение" type="tns:ОбращениеТип" minOccurs="0" />
             <xs:element name="Фамилия" type="tns:СтрокаТип" minOccurs="0" />
