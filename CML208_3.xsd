@@ -6,7 +6,7 @@
     <xs:element name="Каталог" type="tns:Каталог" />
     <xs:element name="Классификатор" type="tns:Классификатор" />
     <xs:element name="Контрагенты" type="tns:Контрагенты" />
-    <xs:element name="РасчетныеСчета" type="tns:РасчетныеСчета"/>
+    <xs:element name="РасчетныеСчета" type="tns:РасчетныеСчета" />
     <xs:element name="ПакетПредложений" type="tns:ПакетПредложений" />
     <xs:element name="КоммерческаяИнформация">
         <xs:complexType>
@@ -67,20 +67,7 @@
         </xs:restriction>
     </xs:simpleType>
     <xs:complexType name="Банк">
-        <xs:sequence>
-            <xs:element name="СчетКорреспондентский" type="tns:СчетНомерТип" minOccurs="0" />
-            <xs:element name="Наименование" type="tns:НаименованиеТип" minOccurs="0" />
-            <xs:element name="Адрес" minOccurs="0">
-                <xs:complexType>
-                    <xs:complexContent>
-                        <xs:extension base="tns:Адрес" />
-                    </xs:complexContent>
-                </xs:complexType>
-            </xs:element>
-            <xs:element name="Контакты" type="tns:КонтактнаяИнформация" minOccurs="0" />
-            <xs:element name="БИК" type="tns:БИКТип" minOccurs="0" />
-            <xs:element name="SWIFT" type="xs:string" minOccurs="0" />
-        </xs:sequence>
+        <xs:sequence />
     </xs:complexType>
     <xs:simpleType name="ВалютаТип">
         <xs:restriction base="xs:string">
@@ -546,7 +533,7 @@
             <xs:element name="ОКПО" type="tns:ОКПОТип" minOccurs="0" />
             <xs:element name="ДатаРегистрации" type="tns:ДатаТип" minOccurs="0" />
             <xs:element name="Руководитель" type="tns:Руководитель" minOccurs="0" />
-            <xs:element name="РасчетныеСчета" type="tns:РасчетныеСчета"/>
+            <xs:element name="РасчетныеСчета" type="tns:РасчетныеСчета" />
             <xs:element name="ПолноеНаименование" type="tns:НаименованиеТип" minOccurs="0" />
             <xs:element name="Обращение" type="tns:ОбращениеТип" minOccurs="0" />
             <xs:element name="Фамилия" type="tns:СтрокаТип" minOccurs="0" />
@@ -865,7 +852,18 @@
     <xs:complexType name="РасчетныйСчет">
         <xs:sequence>
             <xs:element name="НомерСчета" type="tns:СчетНомерТип" />
-            <xs:element name="Банк" type="tns:Банк" minOccurs="0" />
+            <xs:element name="СчетКорреспондентский" type="tns:СчетНомерТип" minOccurs="0" />
+            <xs:element name="Наименование" type="tns:НаименованиеТип" minOccurs="0" />
+            <xs:element name="Адрес" minOccurs="0">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="tns:Адрес" />
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Контакты" type="tns:КонтактнаяИнформация" minOccurs="0" />
+            <xs:element name="БИК" type="tns:БИКТип" minOccurs="0" />
+            <xs:element name="SWIFT" type="xs:string" minOccurs="0" />
             <xs:element name="БанкКорреспондент" type="tns:Банк" minOccurs="0" />
             <xs:element name="Комментарий" type="tns:КомментарийТип" minOccurs="0" />
         </xs:sequence>
